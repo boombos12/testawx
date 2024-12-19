@@ -3,12 +3,6 @@
   collections:
     - name: cisco.ios
   tasks:
-    - name: Run show version command
-      cisco.ios.ios_command:
-        commands:
-          - show version
-      register: result
-
-    - name: Display the output of show version
-      debug:
-        var: result
+    - name: 
+      cisco.ios.ios_ping:
+        dest: 8.8.8.8
