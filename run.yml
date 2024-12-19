@@ -1,2 +1,7 @@
-cisco.ios.ios_ping:
-    dest: 198.51.100.251
+- name: Hello World Sample
+  hosts: 192.168.72.1
+  tasks:
+    - name: Hello Message
+      cisco.ios.ios_ping:
+        dest: 8.8.8.8
+
