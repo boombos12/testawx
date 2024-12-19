@@ -1,8 +1,13 @@
-- name: show version command
-  hosts: 192.168.72.142
+name: Run show version command on Cisco devices
+  hosts: cisco_devices
+  gather_facts: no
   tasks:
     - name: Run show version command
-       cisco.ios.ios_command:
-          commands:
-              - show version
+      cisco.ios.ios_command:
+        commands:
+          - show version
+      register: result
 
+    - name: Display the output of show version
+      debug:
+        var: result
