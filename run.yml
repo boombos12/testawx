@@ -1,11 +1,11 @@
-name: Run show version command on Cisco devices
-  tasks:
-    - name: Run show version command
-      cisco.ios.ios_command:
-        commands:
-          - show version
-      register: result
+- name: Run show version command on Cisco devices
+    tasks:
+      - name: Run show version command
+        cisco.ios.ios_command:
+          commands:
+            - show version
+        register: result
 
-    - name: Display the output of show version
-      debug:
-        var: result
+      - name: Display the output of show version
+        debug:
+          var: result
