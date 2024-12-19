@@ -1,6 +1,12 @@
 - name: Hello World Sample
   hosts: all
   tasks:
-    - name: Hello Message
+    - name: Run show version command
+      cisco.ios.ios_command:
+        commands:
+          - show version
+      register: result
+
+    - name: Display the output of show version
       debug:
-        msg: "Hello World!"
+        var: result
