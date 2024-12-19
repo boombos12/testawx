@@ -1,7 +1,8 @@
-- name: Hello World Sample
-  hosts: 192.168.72.1
+- name: show version command
+  hosts: 192.168.72.142
   tasks:
-    - name: Hello Message
-      cisco.ios.ios_ping:
-        dest: 8.8.8.8
+    - name: Run show version command
+       cisco.ios.ios_command:
+          commands:
+              - show version
 
