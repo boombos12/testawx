@@ -1,5 +1,7 @@
 - name: Hello World Sample
   hosts: all
+  collections:
+    - name: cisco.ios
   tasks:
     - name: Run show version command
       cisco.ios.ios_command:
