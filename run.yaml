@@ -5,11 +5,11 @@
   gather_facts: no
   tasks:
     - name: "Run show version"
-      cisco.ios.ios_command:
-        commands:
-          - show version
-      register: result
+        cisco.ios.ios_command:
+          commands:
+            - show version
+        register: result
 
     - name: Display result
-      debug:
-        var: result
+        debug:
+          var: result
