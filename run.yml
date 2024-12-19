@@ -1,8 +1,13 @@
-- name: Hello World Sample
-  hosts: all
-  collections:
-    - name: cisco.ios
+- name: Run 'show version' command on Cisco devices
+  hosts: cisco_devices
+  gather_facts: no
   tasks:
-    - name: 
-      cisco.ios.ios_ping:
-        dest: 8.8.8.8
+    - name: Run 'show version'
+      cisco.ios.ios_command:
+        commands:
+          - show version
+      register: result
+
+    - name: Display result
+      debug:
+        var: result
