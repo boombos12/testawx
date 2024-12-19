@@ -1,5 +1,7 @@
 - name: Run 'show version' command on Cisco devices
-  hosts: cisco_devices
+  hosts: cisco
+  collections:
+    - name: cisco.ios
   gather_facts: no
   tasks:
     - name: Run 'show version'
