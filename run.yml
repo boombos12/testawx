@@ -1,5 +1,4 @@
 name: Run show version command on Cisco devices
-  hosts: cisco_devices
   gather_facts: no
   tasks:
     - name: Run show version command
