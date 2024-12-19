@@ -1,0 +1,2 @@
+cisco.ios.ios_ping:
+    dest: 198.51.100.251
