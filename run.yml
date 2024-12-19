@@ -1,10 +1,10 @@
-- name: Run 'show version' command on Cisco devices
+- name: "Run show version command on Cisco devices"
   hosts: all
   collections:
     - name: cisco.ios
   gather_facts: no
   tasks:
-    - name: Run 'show version'
+    - name: "Run show version"
       cisco.ios.ios_command:
         commands:
           - show version
