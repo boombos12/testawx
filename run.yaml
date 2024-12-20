@@ -1,6 +1,6 @@
 - name: Test
   hosts: all
   tasks:
-    - name: Test reachability to 198.51.100.251 using default vrf
+    - name: Test reachability
           cisco.ios.ios_ping:
               dest: 8.8.8.8
