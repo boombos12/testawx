@@ -1,12 +1,6 @@
-- name: cisco_sh_ver
+- name: Test
   hosts: all
   tasks:
-  - name: run show version on remote devices
-    cisco.ios.ios_command:
-     commands:
-     - show version       
-  - name: show run on remote devices
-    become: true
-    cisco.ios.ios_command:
-     commands: 
-     - show run
+    - name: Test reachability to 198.51.100.251 using default vrf
+          cisco.ios.ios_ping:
+              dest: 8.8.8.8
