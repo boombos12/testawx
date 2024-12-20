@@ -2,5 +2,5 @@
   hosts: all
   tasks:
     - name: Test reachability
-          cisco.ios.ios_ping:
-              dest: 8.8.8.8
+      cisco.ios.ios_ping:
+        dest: 8.8.8.8
