@@ -1,15 +1,13 @@
-- name: "Run show version command on Cisco devices"
+- name: cisco_sh_ver
   hosts: all
-  collections:
-    - name: cisco.ios
-  gather_facts: no
+  gather_facts: true 
   tasks:
-    - name: "Run show version"
-        cisco.ios.ios_command:
-          commands:
-            - show version
-        register: result
-
-    - name: Display result
-        debug:
-          var: result
+  - name: run show version on remote devices
+    cisco.ios.ios_command:
+     commands:
+     - show version       
+  - name: show run on remote devices
+    become: true
+    cisco.ios.ios_command:
+     commands: 
+     - show run
