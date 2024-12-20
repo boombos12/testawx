@@ -1,6 +1,13 @@
-- name: Test
+- name: Test Cisco IOS device ping
   hosts: all
+  gather_facts: no
   tasks:
-    - name: Test reachability
+    - name: Ping the Cisco device
       cisco.ios.ios_ping:
-        dest: 8.8.8.8
+        host: "{{ inventory_hostname }}"
+        count: 5
+        vrf: "{{ vrf | default('') }}"
+      register: result
+    - name: Show ping result
+      debug:
+        var: result
