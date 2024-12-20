@@ -1,5 +1,8 @@
-- name: Apply the provided configuration
-  cisco.ios.ios_hostname:
-    config:
-      hostname: Router1
-    state: merged
+- name: Test Cisco device connection
+  hosts: all
+  gather_facts: no
+  tasks:
+    - name: Ping the Cisco device
+      cisco.ios.ios_ping:
+        host: "192.168.72.147"
+        count: 1
