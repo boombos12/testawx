@@ -4,5 +4,5 @@
   tasks:
     - name: Ping the Cisco device
       cisco.ios.ios_ping:
-        host: "192.168.72.147"
+        dest: "192.168.72.147"
         count: 1
